@@ -27,14 +27,33 @@ $ sudo apt install redis-server
 Para comprobar que el servidor Redis está funcionando correctamente se puede ejecutar el siguiente comando:
 ```bash
 $ redis-cli PING
-Output:
-PONG
 ```
+Si el resultado es *PONG*, está funcionando correctamente.
 
+**Descarga del repositorio y creación del ambiente virtual:**
+
+Una vez instalado Redis, se puede descargar el repositorio con el siguiente comando:
+```bash
+$ git clone https://github.com/ektormg/pulpo-challenge.git
+```
+El ambiente virtual se puede crear ejecutando el siguiente comando:
+```bash
+$ virtualenv venv
+```
+Una vez creado el ambiente virtual, cambiar al directorio pulpo-challenge e instalar los requerimientos incluidos en el archivo ```requirements.txt```
+```bash
+$ cd pulpo-challenge
+$ pip -r install requirements.txt
+```
+Ahora ya solo queda ejecutar Flask e ir al browser para acceder a la aplicación
 
 
 ## Funcionamiento
-
+```bash
+$ export FLASK_DEBUG=1
+$ export FLASK_APP=project
+$ flask run
+```
 
 ## Mejoras
 
