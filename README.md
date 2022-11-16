@@ -63,7 +63,21 @@ Adicionalmente, se agregó la funcionalidad de inicio de sesión y para acceder 
 
 **Registro de usuario / Inicio de sesión**
 
+Para registrar un nuevo usuario se puede dar click en **Registrarse** ubicado en el menú de la parte superior derecha.
+![registro](https://user-images.githubusercontent.com/64225038/202305822-3cf20cd3-5fb3-443b-a1b1-58fa302825b2.png)
+Ingresar un nombre de usuario, crear una contraseña, y dar click en **Crear usuario**.
 
+Una vez dado de alta el nuevo usuario, podrás iniciar sesión con las credenciales recien creadas (o si no quieres crear un nuevo usuario puedes usar las credenciales mencionadas arriba ```pulpo:pulpo```).
+
+Después de iniciar sesión, serás redirigido de nuevo a la pantalla inicial, y podrás observar tu nombre de usuario en el menu superior de la derecha.
+![logedin](https://user-images.githubusercontent.com/64225038/202308983-a5e4b808-df10-4575-899f-df04f40c7f1e.png)
+
+
+**Push Endpoint**
+
+En este endpoint se mandan los mensajes a la cola. Solo tienes que escribir un mensaje y dar click en el botón **Agregar a la cola**.
+![push](https://user-images.githubusercontent.com/64225038/202311544-c4fac59b-3390-4a9b-9cc5-f17f7478b193.png)
+Después de agregar el mensage, se recibe un mensaje en donde se confirma el env
 
 
 ## Mejoras
