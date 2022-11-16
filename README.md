@@ -77,7 +77,7 @@ Después de iniciar sesión, serás redirigido de nuevo a la pantalla inicial, y
 
 En este endpoint se mandan los mensajes a la cola. Solo tienes que escribir un mensaje y dar click en el botón **Agregar a la cola**.
 ![push](https://user-images.githubusercontent.com/64225038/202311544-c4fac59b-3390-4a9b-9cc5-f17f7478b193.png)
-Después de agregar el mensage, se recibe un mensaje en donde se confirma el env
+Después de agregar el mensaje, se recibe un mensaje en donde se confirma el envío a la cola.
 
 
 ## Mejoras
