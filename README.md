@@ -57,8 +57,9 @@ $ flask run
 Para acceder a la aplicación hay que ir en el browser a la siguiente dirección: http://127.0.0.1:5000
 
 La aplicación cuenta con cuatro endpoints,  **Push** y **Pop** para manipular la cola, **Count** para obtener información del número de mensajes en la cola, y **Health** para obtener información a cerca del servidor Redis.
+![index](https://user-images.githubusercontent.com/64225038/202304068-65e5c9c5-18bd-4bfe-a3f2-c5607d099d6a.png)
+Adicionalmente, se agregó la funcionalidad de inicio de sesión y para acceder a los endpoints, el usuario tendrá que registrare en la aplicación o iniciar sesión con las siguientes credenciales: ```pulpo:pulpo```
 
-Adicionalemente, se agregó la funcionalidad de inicio de sesión y para acceder a la funcionalidad de los endpoints, el usuario tendrá que registrare en la aplicación o iniciar sesión con las siguientes credenciales: ```pulpo:pulpo```
 
 **Registro de usuario / Inicio de sesión**
 
