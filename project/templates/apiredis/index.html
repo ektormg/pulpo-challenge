@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Funcionamiento1{% endblock %}</h1>
+  
+{% endblock %}
+
+{% block content %}
+<p></p>
+
+<h3>Endpoints Requeridos</h3>
+
+<p><a href='/api/queue/push' target="_blank">Push Endpoint</a></p>
+
+<p><a href='/api/queue/pop' target="_blank">Pop Endpoint</a></p>
+
+<p><a href='/api/queue/count' target="_blank">Count Endpoint</a></p>
+
+<br>
+<h3>Endpoints Adicionales</h3>
+
+<p><a href='/api/health' target="_blank">Health Endpoint</a></p>
+
+{% endblock %}

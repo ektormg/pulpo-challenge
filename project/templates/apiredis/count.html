@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Count Endpoint{% endblock %}</h1>
+  
+{% endblock %}
+
+{% block content %}
+
+<br>
+<p>Número de mensajes que están actualmente en la cola: <b>{{ count }}</b> </p>
+<p></p>
+<form action="/api/queue/count">
+<input type="submit" value="Actualizar">
+</form>
+
+<hr>
+
+<h3>Info - Cola de Mensajes / Tareas</h3>
+{% for para in rqinfo_str %}
+	{{para}}<br>
+{% endfor %}
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block header %}
+  <h1>{% block title %}Health Endpoint{% endblock %}</h1>
+  
+{% endblock %}
+
+{% block content %}
+
+<p></p>
+
+<p></p>
+<p></p>
+
+<p> <b>$ redis-cli PING : <i> {{ ping_str }}</i></b></p>
+
+<p>
+ <hr style="height:2px;border-width:0;color:gray;background-color:gray"> 
+</p>
+<p></p>
+<h3>Info / Stats - Redis</h3>
+{% for para in redisinfo_str %}
+	{{para}}<br>
+{% endfor %}
+
+{% endblock %}
+
