@@ -51,6 +51,12 @@ $ export FLASK_DEBUG=1
 $ export FLASK_APP=project
 $ flask run
 ```
+**Opcional**
+
+Para procesar los mensajes de la cola se puede ejecutar, en el mismo directorio pulpo-challenge, el siguiente comando:
+```bash
+$ rq worker
+```
 
 ## Funcionamiento
 
@@ -78,6 +84,34 @@ Después de iniciar sesión, serás redirigido de nuevo a la pantalla inicial, y
 En este endpoint se mandan los mensajes a la cola. Solo tienes que escribir un mensaje y dar click en el botón **Agregar a la cola**.
 ![push](https://user-images.githubusercontent.com/64225038/202311544-c4fac59b-3390-4a9b-9cc5-f17f7478b193.png)
 Después de agregar el mensaje, se recibe un mensaje en donde se confirma el envío a la cola.
+
+
+**Pop Endpoint**
+
+En el Pop endpoint se puede eliminar un mensaje específico o todos los mensajes que se encuentren en ese momento en la cola.
+
+Si desde el Push endpoint se crean y envían varios mensajes en la cola, éstos van a aparecer en la sección inferior de la pantalla **Lista de mensjaes (IDs) en la cola**
+![lista-pop](https://user-images.githubusercontent.com/64225038/202314576-588ed813-1924-4531-a1b7-2f08e2bc6ed3.png)
+Para una fácil y rápida identificación, el ID del mensaje consta del mismo valor del mensaje y su timestamp correspondiente con el fin de evitar IDs duplicados en caso que se repitan los mensajes.
+
+Para eliminar un mensaje en específico, se tiene que ingresar el ID del mensaje de la sección inferior. Se puede copiar y pegar el valor como se muestra en la imagen de abajo, y después dar click en botón **Eliminar**.
+![pop](https://user-images.githubusercontent.com/64225038/202315443-978c0c74-97aa-4a57-ab97-b04b050e5714.png)
+
+Para borrar todos los mensajes en la cola se tiene que dar click en el botón **Borrar Todo**.
+
+
+**Count Endpoint**
+
+Aquí se puede ver el número de mensajes que actualmente existen en la cola, y además se brinda la información equivalente al comando ```rq info```
+![count](https://user-images.githubusercontent.com/64225038/202318568-f961b090-ee82-44b3-88dd-193294c65669.png)
+
+
+**Health Endpoint**
+
+En este endpoint adicional, se obtiene información acerca del estado de salud del servidor redis. Se realiza el chequeo al servidor con ```redis-cli PING``` y además de muestran las métricas del comando ```redis-cli info```
+![health](https://user-images.githubusercontent.com/64225038/202319305-ae96b4c5-66eb-4df4-9966-114f826588e3.png)
+
+
 
 
 ## Mejoras
