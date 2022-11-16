@@ -46,19 +46,26 @@ $ cd pulpo-challenge
 $ pip -r install requirements.txt
 ```
 Ahora ya solo queda ejecutar Flask e ir al browser para acceder a la aplicación
-
-
-## Funcionamiento
 ```bash
 $ export FLASK_DEBUG=1
 $ export FLASK_APP=project
 $ flask run
 ```
 
+## Funcionamiento
+
+Para acceder a la aplicación hay que ir en el browser a la siguiente dirección: http://127.0.0.1:5000
+
+La aplicación cuenta con cuatro endpoints,  **Push** y **Pop** para manipular la cola, **Count** para obtener información del número de mensajes en la cola, y **Health** para obtener información a cerca del servidor Redis.
+
+Adicionalemente, se agregó la funcionalidad de inicio de sesión y para acceder a la funcionalidad de los endpoints, el usuario tendrá que registrare en la aplicación o iniciar sesión con las siguientes credenciales: ```pulpo:pulpo```
+
+**Registro de usuario / Inicio de sesión**
+
+
+
+
 ## Mejoras
 
 
 
-export FLASK_APP=project
-
-export FLASK_DEBUG=1
