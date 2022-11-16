@@ -6,6 +6,31 @@ Este proyecto es elaborado por Héctor Moreno García para la empresa Pulpo como
 
 ## Instalación
 
+Las instrucciones para reproducir el challenge están considerando el uso de Linux (Debian based) como sistema operativo, y la existencia de los siguientes requisitos:
+
+**Requisitos:**
+* Linux
+* Python3
+* El paquete ```git``` para poder clonar el repositorio
+* Los paquetes ```pip```, ```virtualenv```
+
+**Instalación de Redis:**
+
+Primero actualizamos los paquetes:
+```bash
+$ sudo apt update
+```
+Después instalamos el paquete ```redis-server```
+```bash
+$ sudo apt install redis-server
+```
+Para comprobar que el servidor Redis está funcionando correctamente se puede ejecutar el siguiente comando:
+```bash
+$ redis-cli PING
+Output:
+PONG
+```
+
 
 
 ## Funcionamiento
