@@ -44,23 +44,35 @@ El ambiente virtual se puede crear ejecutando el siguiente comando:
 ```bash
 $ virtualenv venv
 ```
-Una vez creado el ambiente virtual, cambiar al directorio pulpo-challenge e instalar los requerimientos incluidos en el archivo ```requirements.txt```
+![venv](https://user-images.githubusercontent.com/64225038/202321558-d2311dc9-514f-48ea-927d-6f07f699276b.png)
+
+
+Una vez creado el ambiente virtual, lo activamos y después cambiamos al directorio pulpo-challenge e instalamos los requerimientos incluidos en el archivo ```requirements.txt```
 ```bash
+$ source venv/bin/activate
 $ cd pulpo-challenge
-$ pip -r install requirements.txt
+$ pip install -r requirements.txt
 ```
+![pip-install](https://user-images.githubusercontent.com/64225038/202322352-4076af75-fa60-4241-b8cc-5ea882bd7d7c.png)
+
+
 Ahora ya solo queda ejecutar Flask e ir al browser para acceder a la aplicación
 ```bash
 $ export FLASK_DEBUG=1
 $ export FLASK_APP=project
 $ flask run
 ```
+![flask-run](https://user-images.githubusercontent.com/64225038/202322764-1c32ffa3-b9b5-475a-8725-08d998228af7.png)
+
+
 **Opcional**
 
 Para procesar los mensajes de la cola se puede ejecutar, en el mismo directorio pulpo-challenge, el siguiente comando:
 ```bash
 $ rq worker
 ```
+![rq-worker](https://user-images.githubusercontent.com/64225038/202323058-03d1a846-4370-48e3-9edb-cb2f197e8ba0.png)
+
 
 ## Funcionamiento
 
@@ -117,8 +129,8 @@ En este endpoint adicional, se obtiene información acerca del estado de salud d
 
 
 
+## Uso posible en cybersecurity
 
-## Mejoras
 
 
 
