@@ -23,22 +23,6 @@ def index():
     
     return render_template('apiredis/index.html')
 
-#Function to just add tasks into the queue
-def message():
-	message= "Hellooo"
-	time.sleep(100)
-	return (message)
-
-#Endpoint hello triggers function message
-@bp.route("/api/queue/hello")
-@login_required
-def add_message():
-	
-	dt = datetime.now()
-	dt_str = str(dt)
-	job = q.enqueue(message, job_id=dt_str)
-	
-	return f"The task {job.id} is added into the task queue"
 	
 #This function is the concept of a task added into a queue, it is triggered by the Push Endpoint
 def message3(message2):
@@ -114,16 +98,4 @@ def health():
 	var3 = subprocess.Popen('redis-cli ping', shell=True, stdout=subprocess.PIPE).stdout.read()
 		
 	return render_template('apiredis/health.html', redisinfo_str = redisinfo_str.split('\n'), ping_str= var3.decode())
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
