@@ -18,15 +18,15 @@ Las instrucciones para reproducir el challenge están considerando el uso de Lin
 
 Primero actualizamos los paquetes:
 ```bash
-$ sudo apt update
+sudo apt update
 ```
 Después instalamos el paquete ```redis-server```
 ```bash
-$ sudo apt install redis-server
+sudo apt install redis-server
 ```
 Para comprobar que el servidor Redis está funcionando correctamente se puede ejecutar el siguiente comando:
 ```bash
-$ redis-cli PING
+redis-cli PING
 ```
 Si el resultado es *PONG*, está funcionando correctamente.
 ![ping](https://user-images.githubusercontent.com/64225038/202320579-a2949abc-df56-48c9-839a-337969963308.png)
@@ -36,31 +36,31 @@ Si el resultado es *PONG*, está funcionando correctamente.
 
 Una vez instalado Redis, se puede descargar el repositorio con el siguiente comando:
 ```bash
-$ git clone https://github.com/ektormg/pulpo-challenge.git
+git clone https://github.com/ektormg/pulpo-challenge.git
 ```
 ![git-clone](https://user-images.githubusercontent.com/64225038/202321106-8a9b6722-6944-4e3e-82ed-22590f928079.png)
 
 El ambiente virtual se puede crear ejecutando el siguiente comando:
 ```bash
-$ virtualenv venv
+virtualenv venv
 ```
 ![venv](https://user-images.githubusercontent.com/64225038/202321558-d2311dc9-514f-48ea-927d-6f07f699276b.png)
 
 
 Una vez creado el ambiente virtual, lo activamos y después cambiamos al directorio pulpo-challenge e instalamos los requerimientos incluidos en el archivo ```requirements.txt```
 ```bash
-$ source venv/bin/activate
-$ cd pulpo-challenge
-$ pip install -r requirements.txt
+source venv/bin/activate
+cd pulpo-challenge
+pip install -r requirements.txt
 ```
 ![pip-install](https://user-images.githubusercontent.com/64225038/202322352-4076af75-fa60-4241-b8cc-5ea882bd7d7c.png)
 
 
 Ahora ya solo queda ejecutar Flask e ir al browser para acceder a la aplicación
 ```bash
-$ export FLASK_DEBUG=1
-$ export FLASK_APP=project
-$ flask run
+export FLASK_DEBUG=1
+export FLASK_APP=project
+flask run
 ```
 ![flask-run](https://user-images.githubusercontent.com/64225038/202322764-1c32ffa3-b9b5-475a-8725-08d998228af7.png)
 
@@ -69,7 +69,7 @@ $ flask run
 
 Para procesar los mensajes de la cola se puede ejecutar, en el mismo directorio pulpo-challenge, el siguiente comando:
 ```bash
-$ rq worker
+rq worker
 ```
 ![rq-worker](https://user-images.githubusercontent.com/64225038/202323058-03d1a846-4370-48e3-9edb-cb2f197e8ba0.png)
 
