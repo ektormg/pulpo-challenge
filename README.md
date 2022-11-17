@@ -2,11 +2,11 @@
 
 ## Intro
 
-Este proyecto es elaborado por Héctor Moreno García para la empresa Pulpo como parte de su technical challenge. El challenge consta de implementar una cola de mensajes utilizando Redis y desarrollar una API para poder manipular la cola.
+Este proyecto es elaborado por Héctor Moreno García para la empresa Pulpo, como parte de su technical challenge. El reto consiste en implementar una cola de mensajes utilizando Redis y desarrollar una API para poder manipular la cola.
 
 ## Instalación
 
-Las instrucciones para reproducir el challenge están considerando el uso de Linux (Debian based) como sistema operativo, y la existencia de los siguientes requisitos:
+Las instrucciones para reproducir el challenge están consideradas para Linux (Debian based) como sistema operativo, y la existencia de las siguientes condiciones:
 
 **Requisitos:**
 * Linux
@@ -16,11 +16,11 @@ Las instrucciones para reproducir el challenge están considerando el uso de Lin
 
 **Instalación de Redis:**
 
-Primero actualizamos los paquetes:
+Primero hay que actualizar los paquetes:
 ```bash
 sudo apt update
 ```
-Después instalamos el paquete ```redis-server```
+Después instalar el paquete ```redis-server```
 ```bash
 sudo apt install redis-server
 ```
@@ -47,7 +47,7 @@ virtualenv venv
 ![venv](https://user-images.githubusercontent.com/64225038/202321558-d2311dc9-514f-48ea-927d-6f07f699276b.png)
 
 
-Una vez creado el ambiente virtual, lo activamos y después cambiamos al directorio pulpo-challenge e instalamos los requerimientos incluidos en el archivo ```requirements.txt```
+Una vez creado el ambiente virtual, se activa, después hay que cambiar al directorio pulpo-challenge, y se instalan los requerimientos incluidos en el archivo ```requirements.txt```
 ```bash
 source venv/bin/activate
 cd pulpo-challenge
@@ -56,7 +56,7 @@ pip install -r requirements.txt
 ![pip-install](https://user-images.githubusercontent.com/64225038/202322352-4076af75-fa60-4241-b8cc-5ea882bd7d7c.png)
 
 
-Ahora ya solo queda ejecutar Flask e ir al browser para acceder a la aplicación
+Ahora solo queda ejecutar Flask e ir al browser para acceder a la aplicación
 ```bash
 export FLASK_DEBUG=1
 export FLASK_APP=project
@@ -76,39 +76,39 @@ rq worker
 
 ## Funcionamiento
 
-Para acceder a la aplicación hay que ir en el browser a la siguiente dirección: http://127.0.0.1:5000
+Para acceder a la aplicación hay que ir a la siguiente dirección en el browser: http://127.0.0.1:5000
 
-La aplicación cuenta con cuatro endpoints,  **Push** y **Pop** para manipular la cola, **Count** para obtener información del número de mensajes en la cola, y **Health** para obtener información acerca del servidor Redis.
+La aplicación cuenta con cuatro endpoints:  **Push** y **Pop** para manipular la cola, **Count** para obtener información sobre su número de mensajes, y **Health** para obtener información acerca del servidor Redis.
 ![index](https://user-images.githubusercontent.com/64225038/202304068-65e5c9c5-18bd-4bfe-a3f2-c5607d099d6a.png)
-Adicionalmente, se agregó la funcionalidad de inicio de sesión y para acceder a los endpoints, el usuario tendrá que registrare en la aplicación o iniciar sesión con las siguientes credenciales: ```pulpo:pulpo```
+Adicionalmente, fue agregada la funcionalidad de inicio de sesión; para acceder a los endpoints, el usuario tendrá que registrarse en la aplicación o iniciar sesión con las siguientes credenciales: ```pulpo:pulpo```
 
 
 **Registro de usuario / Inicio de sesión**
 
-Para registrar un nuevo usuario se puede dar click en **Registrarse** ubicado en el menú de la parte superior derecha.
+Para registrar un nuevo usuario dar click en **Registrarse**, ubicado en el menú de la parte superior derecha.
 ![registro](https://user-images.githubusercontent.com/64225038/202305822-3cf20cd3-5fb3-443b-a1b1-58fa302825b2.png)
-Ingresar un nombre de usuario, crear una contraseña, y dar click en **Crear usuario**.
+Ingresar un nombre de usuario, crear una contraseña y dar click en **Crear usuario**.
 
-Una vez dado de alta el nuevo usuario, podrás iniciar sesión con las credenciales recien creadas (o si no quieres crear un nuevo usuario puedes usar las credenciales mencionadas arriba ```pulpo:pulpo```).
+Una vez dado de alta el nuevo usuario, se puede iniciar sesión con las credenciales recien creadas (o si no se desea crear un nuevo usuario pueden usarse las credenciales mencionadas arriba ```pulpo:pulpo```).
 
-Después de iniciar sesión, serás redirigido de nuevo a la pantalla inicial, y podrás observar tu nombre de usuario en el menu superior de la derecha.
+Después de iniciar sesión, se redireccionará nuevamente a la pantalla inicial, y se podrá observar el nombre de usuario en el menú superior de la derecha.
 ![logedin](https://user-images.githubusercontent.com/64225038/202308983-a5e4b808-df10-4575-899f-df04f40c7f1e.png)
 
 
 **Push Endpoint**
 
-En este endpoint se mandan los mensajes a la cola. Solo tienes que escribir un mensaje y dar click en el botón **Agregar a la cola**.
+En este endpoint se mandan los mensajes a la cola. Solo hay que escribir un mensaje y dar click en el botón **Agregar a la cola**.
 ![push](https://user-images.githubusercontent.com/64225038/202311544-c4fac59b-3390-4a9b-9cc5-f17f7478b193.png)
-Después de agregar el mensaje, se recibe un mensaje en donde se confirma el envío a la cola.
+Después de agregar el mensaje, se recibe una notificación en donde se confirma el envío a la cola.
 
 
 **Pop Endpoint**
 
 En el Pop endpoint se puede eliminar un mensaje específico o todos los mensajes que se encuentren en ese momento en la cola.
 
-Si desde el Push endpoint se crean y envían varios mensajes en la cola, éstos van a aparecer en la sección inferior de la pantalla **Lista de mensjaes (IDs) en la cola**
+Si desde el Push endpoint se crean y envían varios mensajes en la cola, éstos van a aparecer en la sección inferior de la pantalla **Lista de mensajes (IDs) en la cola**
 ![lista-pop](https://user-images.githubusercontent.com/64225038/202314576-588ed813-1924-4531-a1b7-2f08e2bc6ed3.png)
-Para una fácil y rápida identificación, el ID del mensaje consta del mismo valor del mensaje y su timestamp correspondiente con el fin de evitar IDs duplicados en caso que se repitan los mensajes.
+Para una fácil y rápida identificación, el ID del mensaje consta del mismo valor del mensaje y su timestamp correspondiente, con el fin de evitar IDs duplicados en caso de que se repitan los mensajes.
 
 Para eliminar un mensaje en específico, se tiene que ingresar el ID del mensaje de la sección inferior. Se puede copiar y pegar el valor como se muestra en la imagen de abajo, y después dar click en botón **Eliminar**.
 ![pop](https://user-images.githubusercontent.com/64225038/202315443-978c0c74-97aa-4a57-ab97-b04b050e5714.png)
@@ -118,20 +118,20 @@ Para borrar todos los mensajes en la cola se tiene que dar click en el botón **
 
 **Count Endpoint**
 
-Aquí se puede ver el número de mensajes que actualmente existen en la cola, y además se brinda la información equivalente al comando ```rq info```
+Aquí se puede ver el número de mensajes que actualmente existe en la cola, además se brinda la información equivalente al comando ```rq info```
 ![count](https://user-images.githubusercontent.com/64225038/202318568-f961b090-ee82-44b3-88dd-193294c65669.png)
 
 
 **Health Endpoint**
 
-En este endpoint adicional, se obtiene información acerca del estado de salud del servidor redis. Se realiza el chequeo al servidor con ```redis-cli PING``` y además de muestran las métricas del comando ```redis-cli info```
+En este endpoint adicional, se obtiene información acerca del estado de salud del servidor redis. Se realiza el chequeo al servidor con ```redis-cli PING``` y además se muestran las métricas del comando ```redis-cli info```
 ![health](https://user-images.githubusercontent.com/64225038/202319305-ae96b4c5-66eb-4df4-9966-114f826588e3.png)
 
 
 
 ## Uso posible en cybersecurity
 
-En tareas de cybersecurity, una cola de mensajes/tareas podría tener diversos usos. Dentro del Red Team se podría utilizar una cola de tareas en la etapa de reconocimiento de los pentests. Por ejemplo, se podría ejecutar la herramienta ```dirb``` para escanear directorios y subdirectorios en una dirección URL, pero con la cola de mensajes de Redis se podrían ingresar múltiples URLs y cada escaneo se iría a la cola de tareas para su procesamiento. Poteriormente se podría revisar en un archivo .txt los resultados de los escaneos. Otro ejemplo podría ser en el envío de emails en una campaña de phishing.
+En tareas de cybersecurity, una cola de mensajes/tareas podría tener diversos usos. Dentro del Red Team se podría utilizar una cola de tareas en la etapa de reconocimiento de los pentests. Por ejemplo, se podría ejecutar la herramienta ```dirb``` para escanear directorios y subdirectorios en una dirección URL, pero con la cola de mensajes de Redis se podrían ingresar múltiples URLs y cada escaneo se iría a la cola de tareas para su procesamiento. Posteriormente se podrían revisar en un archivo .txt los resultados de los escaneos. Otro ejemplo podría ser su uso en el envío de emails en una campaña de phishing.
 
 Para tareas del Blue Team, una cola de mensajes se podría implementar para levantar tickets que requieran atención del equipo de seguridad. El usuario podría ingresar en una aplicación su mensaje, nivel de prioridad, y tipo de problema (web app, servidores, accesos, etc.). El ticket iría a la cola de mensajes para su procesamiento y debida atención de parte del equipo de seguridad.
 
