@@ -29,6 +29,8 @@ Para comprobar que el servidor Redis está funcionando correctamente se puede ej
 $ redis-cli PING
 ```
 Si el resultado es *PONG*, está funcionando correctamente.
+![ping](https://user-images.githubusercontent.com/64225038/202320579-a2949abc-df56-48c9-839a-337969963308.png)
+
 
 **Descarga del repositorio y creación del ambiente virtual:**
 
@@ -36,6 +38,8 @@ Una vez instalado Redis, se puede descargar el repositorio con el siguiente coma
 ```bash
 $ git clone https://github.com/ektormg/pulpo-challenge.git
 ```
+![git-clone](https://user-images.githubusercontent.com/64225038/202321106-8a9b6722-6944-4e3e-82ed-22590f928079.png)
+
 El ambiente virtual se puede crear ejecutando el siguiente comando:
 ```bash
 $ virtualenv venv
