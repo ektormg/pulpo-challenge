@@ -110,7 +110,7 @@ Si desde el Push endpoint se crean y envían varios mensajes en la cola, éstos 
 ![lista-pop](https://user-images.githubusercontent.com/64225038/202314576-588ed813-1924-4531-a1b7-2f08e2bc6ed3.png)
 Para una fácil y rápida identificación, el ID del mensaje consta del mismo valor del mensaje y su timestamp correspondiente, con el fin de evitar IDs duplicados en caso de que se repitan los mensajes.
 
-Para eliminar un mensaje en específico, se tiene que ingresar el ID del mensaje de la sección inferior. Se puede copiar y pegar el valor como se muestra en la imagen de abajo, y después dar click en botón **Eliminar**.
+Para eliminar un mensaje en específico, se tiene que ingresar el ID del mensaje de la sección inferior. Se puede copiar y pegar el valor como se muestra en la imagen de abajo, y después dar click en el botón **Eliminar**.
 ![pop](https://user-images.githubusercontent.com/64225038/202315443-978c0c74-97aa-4a57-ab97-b04b050e5714.png)
 
 Para borrar todos los mensajes en la cola se tiene que dar click en el botón **Borrar Todo**.
