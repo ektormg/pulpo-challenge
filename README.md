@@ -131,6 +131,8 @@ En este endpoint adicional, se obtiene información acerca del estado de salud d
 
 ## Uso posible en cybersecurity
 
+En tareas de cybersecurity, una cola de mensajes/tareas podría tener diversos usos. Dentro del Red Team se podría utilizar una cola de tareas en la etapa de reconocimiento de los pentests. Por ejemplo, se podría ejecutar la herramienta ```dirb``` para escanear directorios y subdirectorios en una dirección URL, pero con la cola de mensajes de Redis se podrían ingresar múltiples URLs y cada escaneo se iría a la cola de tareas para su procesamiento. Poteriormente se podría revisar en un archivo .txt los resultados de los escaneos. Otro ejemplo podría ser en el envío de emails en una campaña de phishing.
 
+Para tareas del Blue Team, una cola de mensajes se podría implementar para levantar tickets que requieran atención del equipo de seguridad. El usuario podría ingresar en una aplicación su mensaje, nivel de prioridad, y tipo de problema (web app, servidores, accesos, etc.). El ticket iría a la cola de mensajes para su procesamiento y debida atención de parte del equipo de seguridad.
 
 
