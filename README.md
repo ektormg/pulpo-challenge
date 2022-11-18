@@ -129,6 +129,20 @@ En este endpoint adicional, se obtiene información acerca del estado de salud d
 
 ## Docker
 
+Otra alternativa que se tiene es utilizar Docker para ejecutar la aplicación. Los pasos que se describen a continuación consideran que ```docker``` se encuentra instalado y en funcionamiento.
+
+Primero se descarga el repositorio desde Github.
+```bash
+git clone https://github.com/ektormg/pulpo-challenge.git
+```
+![docker-git](https://user-images.githubusercontent.com/64225038/202593755-4ac535a9-f54b-4b3a-8982-ab0e470d0ac9.png)
+
+En el directorio pulpo-challenge se deberá crea el archivo **Dockerfile** con la siguiente información:
+```bash
+touch Dockerfile
+nano Dockerfile
+```
+
 
 
 ## Uso posible en cybersecurity
