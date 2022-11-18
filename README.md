@@ -142,6 +142,65 @@ En el directorio pulpo-challenge se deberá crea el archivo **Dockerfile** con l
 touch Dockerfile
 nano Dockerfile
 ```
+![touch-nano](https://user-images.githubusercontent.com/64225038/202600713-395d5492-dc5b-49cd-9938-aca9903b5088.png)
+Contenido del archivo Dockerfile:
+```bash
+# syntax=docker/dockerfile:1
+
+FROM ubuntu
+
+RUN apt update
+
+RUN apt install python3-pip -y
+
+RUN apt install redis-server -y
+
+WORKDIR /app
+
+COPY ./requirements.txt /app/requirements.txt
+
+RUN pip install -r requirements.txt
+
+COPY . /app
+
+ENV FLASK_APP=project
+
+CMD flask run -h 0.0.0.0 -p 5000
+```
+Con el siguiente comando se crea la imagen de la aplicación para Docker:
+```bash
+docker build -t pulpo-docker .
+```
+![image-success](https://user-images.githubusercontent.com/64225038/202603400-37831805-8c9c-4914-b061-8ce05dae05d6.png)
+Una vez que se haya creado exitosamente la imagen, se puede verificar con el siguiente comando:
+```bash
+docker images
+```
+![docker-images](https://user-images.githubusercontent.com/64225038/202604084-bb6c0563-ec0a-4d34-ac78-6c15399d0f63.png)
+
+
+Para ejecutar la aplicación se deberá ingresar el siguiente comando:
+```bash
+docker run -d -p 5000:5000 pulpo-docker
+```
+![docker-run](https://user-images.githubusercontent.com/64225038/202604359-d97cbfd2-8959-4d1e-b9d4-74b0efe1491d.png)
+
+Por último, se deben iniciar el servidor Redis y el worker para procesar los mensajes de la cola. Antes, se debe ejecutar el siguiente comando para obtener el ID del Container que se acaba de inicializar.
+```bash
+docker ps
+```
+Una vez identificado el Container ID, ejecutar los siguientes dos comandos:
+Para iniciar el servidor Redis
+```bash
+docker exec <ContainerID> redis-server
+```
+En una terminal distinta, ejecutar el worker:
+```bash
+docker exec <ContainerID> rq worker
+```
+
+Para acceder a la aplicación hay que ir a la siguiente dirección en el browser: http://127.0.0.1:5000
+![app-docker](https://user-images.githubusercontent.com/64225038/202607859-21882217-00a1-4226-9d2f-69e5d8a6973e.png)
 
 
 
