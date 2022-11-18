@@ -30,7 +30,7 @@ redis-cli PING
 ```
 Si el resultado es *PONG*, está funcionando correctamente.
 ![ping](https://user-images.githubusercontent.com/64225038/202320579-a2949abc-df56-48c9-839a-337969963308.png)
-
+Si apareciera error, se debe ejecutar el siguiente comando: ```redis-server```
 
 **Descarga del repositorio y creación del ambiente virtual:**
 
@@ -126,6 +126,8 @@ Aquí se puede ver el número de mensajes que actualmente existe en la cola, ade
 
 En este endpoint adicional, se obtiene información acerca del estado de salud del servidor redis. Se realiza el chequeo al servidor con ```redis-cli PING``` y además se muestran las métricas del comando ```redis-cli info```
 ![health](https://user-images.githubusercontent.com/64225038/202319305-ae96b4c5-66eb-4df4-9966-114f826588e3.png)
+
+## Docker
 
 
 
