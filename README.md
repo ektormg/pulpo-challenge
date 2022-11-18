@@ -129,15 +129,15 @@ En este endpoint adicional, se obtiene información acerca del estado de salud d
 
 ## Docker
 
-Otra alternativa que se tiene es utilizar Docker para ejecutar la aplicación. Los pasos que se describen a continuación consideran que ```docker``` se encuentra instalado y en funcionamiento.
+Docker es una alternativa distinta para ejecutar la aplicación. Los pasos que se describen a continuación precisan que ```docker``` se encuentre instalado y en funcionamiento.
 
-Primero se descarga el repositorio desde Github.
+Primero debe descargarse el repositorio desde Github.
 ```bash
 git clone https://github.com/ektormg/pulpo-challenge.git
 ```
 ![docker-git](https://user-images.githubusercontent.com/64225038/202593755-4ac535a9-f54b-4b3a-8982-ab0e470d0ac9.png)
 
-En el directorio pulpo-challenge se deberá crea el archivo **Dockerfile** con la siguiente información:
+En el directorio pulpo-challenge se deberá crear el archivo **Dockerfile** con la siguiente información:
 ```bash
 touch Dockerfile
 nano Dockerfile
@@ -172,7 +172,7 @@ Con el siguiente comando se crea la imagen de la aplicación para Docker:
 docker build -t pulpo-docker .
 ```
 ![image-success](https://user-images.githubusercontent.com/64225038/202603400-37831805-8c9c-4914-b061-8ce05dae05d6.png)
-Una vez que se haya creado exitosamente la imagen, se puede verificar con el siguiente comando:
+Una vez que se haya creado exitosamente la imagen, ésta se puede verificar con el siguiente comando:
 ```bash
 docker images
 ```
@@ -185,12 +185,11 @@ docker run -d -p 5000:5000 pulpo-docker
 ```
 ![docker-run](https://user-images.githubusercontent.com/64225038/202604359-d97cbfd2-8959-4d1e-b9d4-74b0efe1491d.png)
 
-Por último, se deben iniciar el servidor Redis y el worker para procesar los mensajes de la cola. Antes, se debe ejecutar el siguiente comando para obtener el ID del Container que se acaba de inicializar.
+Por último, se deben iniciar el servidor Redis y el worker para procesar los mensajes de la cola. Para esto, antes se debe ejecutar el siguiente comando para obtener el ID del Container que se acaba de inicializar.
 ```bash
 docker ps
 ```
-Una vez identificado el Container ID, ejecutar los siguientes dos comandos:
-Para iniciar el servidor Redis
+Una vez identificado el Container ID, ejecutar los siguientes dos comandos. Para iniciar el servidor Redis:
 ```bash
 docker exec <ContainerID> redis-server
 ```
@@ -199,7 +198,7 @@ En una terminal distinta, ejecutar el worker:
 docker exec <ContainerID> rq worker
 ```
 
-Para acceder a la aplicación hay que ir a la siguiente dirección en el browser: http://127.0.0.1:5000
+Finalmente para acceder a la aplicación hay que ir a la siguiente dirección en el browser: http://127.0.0.1:5000
 ![app-docker](https://user-images.githubusercontent.com/64225038/202607859-21882217-00a1-4226-9d2f-69e5d8a6973e.png)
 
 
