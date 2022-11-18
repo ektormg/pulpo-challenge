@@ -198,7 +198,7 @@ En una terminal distinta, ejecutar el worker:
 docker exec <ContainerID> rq worker
 ```
 
-Finalmente para acceder a la aplicación hay que ir a la siguiente dirección en el browser: http://127.0.0.1:5000
+Finalmente, para acceder a la aplicación hay que ir a la siguiente dirección en el browser: http://127.0.0.1:5000
 ![app-docker](https://user-images.githubusercontent.com/64225038/202607859-21882217-00a1-4226-9d2f-69e5d8a6973e.png)
 
 
